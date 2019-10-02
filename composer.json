@@ -1,0 +1,44 @@
+{
+    "name": "jlorente/laravel-eloquent-splitted-dates-trait",
+    "description": "A Laravel Trait for Eloquent Models to handle date fields that are stored both in the date field itself and in separate field components such as year, month, day, time, etc...",
+    "keywords": [
+        "php",
+        "jlorente",
+        "laravel",
+        "dates",
+        "splitted dates",
+        "datetime",
+        "year",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "José Lorente",
+            "email": "jose.lorente.martin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "~5.6 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jlorente\\Laravel\\Eloquent\\Concerns\\SplittedDates": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { 
+            "Jlorente\\Laravel\\Eloquent\\Concerns\\SplittedDates\\Tests\\": "tests/" 
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
