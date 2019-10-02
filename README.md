@@ -31,7 +31,7 @@ to the ```require``` section of your `composer.json` file.
 ### Basic Configuration
 
 To enable and configure splitted dates fields in an Eloquent Model use the 
-Jlorente\Laravel\Eloquent\Concerns\SplittedDates\HasSplittedDates on the model 
+Jlorente\Laravel\Eloquent\Concerns\SplittedDates\HasSplittedDates Trait on the model 
 and define the splittedDates array with the date fields you want to store splitted.
 
 
