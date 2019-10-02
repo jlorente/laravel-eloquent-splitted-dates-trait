@@ -34,6 +34,7 @@ To enable and configure splitted dates fields in an Eloquent Model use the
 Jlorente\Laravel\Eloquent\Concerns\SplittedDates\HasSplittedDates on the model 
 and define the splittedDates array with the date fields you want to store splitted.
 
+
 ```php
 <?php
 
@@ -56,9 +57,11 @@ class Subscription extends Model
 
 ```
 
-If this example, the "begin_at" date will be stored splitted in the fields 
+
+In the example, the "begin_at" date will be stored splitted in the fields 
 "begin_at_year", "begin_at_month" and "begin_at_day". Everytime the "begin_at" 
 field is set, the other fields will be set also and vice versa.
+
 
 ```php
 
@@ -71,9 +74,11 @@ echo $subscription->begin_at_day; // 2
 
 ```
 
+
 If one of the splitted components is null, the main attribute "begin_at" correspondent 
 component will be set to to 1 in case of month and day properties, 0 in case of 
 time properties or the current year in case of year property.
+
 
 ```php
 
@@ -93,6 +98,7 @@ in the [date mutator](https://laravel.com/docs/6.x/eloquent-mutators#date-mutato
 property so you can set its value to a UNIX timestamp, date string (Y-m-d), 
 date-time string, or a DateTime / Carbon instance.
 
+
 ```php
 
 $subscription = new Subscription();
@@ -103,8 +109,9 @@ $subscription->begin_at = strtotime() // OK
 
 ```
 
-Remember that the database table must have the correspondent columns "*_year", "*_month" 
-and "*_day" to store the splitted date value.
+
+Remember that the database table must have the correspondent columns "_year", "_month" 
+and "_day" to store the splitted date value.
 
 ### Advanced Configuration
 
@@ -114,6 +121,7 @@ you want (year, month, day, hour, minute, second, milli, millisecond, micro, mic
 
 To configure the splitted date with other units than the default ones define 
 which ones do you want to store on splittedDates property definition.
+
 
 ```php
 <?php
@@ -137,6 +145,7 @@ class Subscription extends Model
 
 ```
 
+
 Doing so, the properties "begin_at_hour" and "begin_at_minute" will be set everytime 
 the "begin_at" field is set and vice versa.
 
@@ -154,10 +163,12 @@ echo $subscription->begin_at->toDateTimeString(); // 2019-10-02 15:31:12
 
 ```
 
+
 ## Further considerations
 
 The trait does not validate dates when setting the splitted fields, so it is 
 possible that date overflows ocurr if you set an invalid value for a date.
+
 
 ```php
 
@@ -170,6 +181,7 @@ echo $subscription->begin_at_hour; // 27
 echo $subscription->begin_at->toDateTimeString(); // 2019-10-03 03:45:12
 
 ```
+
 
 ## License 
 
