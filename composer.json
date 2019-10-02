@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jlorente\\Laravel\\Eloquent\\Concerns\\SplittedDates": "src/"
+            "Jlorente\\Laravel\\Eloquent\\Concerns\\SplittedDates\\": "src/"
         }
     },
     "autoload-dev": {
