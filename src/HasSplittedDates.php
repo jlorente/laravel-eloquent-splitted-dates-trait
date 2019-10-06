@@ -18,14 +18,6 @@ trait HasSplittedDates
     private $splittedDatesNormalized = false;
 
     /**
-     * The splitted dates attributes.
-     *
-     * @var array
-     */
-    protected $splittedDates = [
-    ];
-
-    /**
      * Gets the array that defines the default mapper for the splitted dates.
      *
      * @return array
