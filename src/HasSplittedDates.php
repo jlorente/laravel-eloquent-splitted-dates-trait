@@ -161,7 +161,7 @@ trait HasSplittedDates
         if ($attribute === $key) {
             parent::setAttribute($key, $value);
             foreach ($map as $mapKey) {
-                $this->attributes["{$key}_{$mapKey}"] = $this->$attribute->$mapKey;
+                $this->attributes["{$key}_{$mapKey}"] = $this->$attribute ? $this->$attribute->$mapKey : null;
             }
         } else {
             $this->attributes[$attribute] = $value;

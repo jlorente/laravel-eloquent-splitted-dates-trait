@@ -295,4 +295,29 @@ class ModelSplittedDatesTest extends TestCase
         $this->assertEquals(27, $model->end_at_hour);
     }
 
+    /**
+     * @group CommonTests
+     * @group CommonUnitTests
+     * @group ModelSplittedDatesTest
+     */
+    public function testDateSetToNullSetsAllSplittedValuesToNull()
+    {
+        $model = $this->createAnonymousModel([
+            'end_at'
+            , 'end_at_year'
+            , 'end_at_month'
+            , 'end_at_day'
+                ], [
+            'end_at'
+        ]);
+
+        $model->end_at = '2027-07-15 19:56:01';
+        $this->assertEquals(15, $model->end_at_day);
+
+        $model->end_at = null;
+        $this->assertNull($model->end_at_day);
+        $this->assertNull($model->end_at_month);
+        $this->assertNull($model->end_at_year);
+    }
+
 }
